@@ -1,0 +1,21 @@
+{% extends 'main/base.html' %}
+
+{% block title %} Details for {{ projct.name }}  {% endblock %}
+
+
+{% block content %}
+
+<div class="container">
+    <section>
+    <h1>{{ projct.name }}</h1>
+    <h6>Established on: {{ projct.established_at}}</h6>
+    <p>{{ projct.description }}</p>
+    <h6>Under the department of: {{ projct.department}}</h6>
+    <div class="m-3 "><a href="{% url 'main:updateprojct' projct.id %}" class="btn btn-primary">update</a></div>
+
+</section>
+    <hr/>
+
+</div>
+
+{% endblock %}

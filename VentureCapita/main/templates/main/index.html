@@ -1,0 +1,22 @@
+{% extends 'main/base.html' %}
+
+
+{% block content %}
+<div class="container">
+    <h2>New Projects</h2>
+
+    <div class="row">
+        {% for project in projects %}
+            
+            <div class="col-3">
+                <div class="p-4 shadow" >
+                    <a href="{% url 'main:projectDetails' project.id %}"><h4>{{ project.name }}</h4></a>
+                    <p>{{ project.description }}</p>
+                    <h6>Date: {{ project.established_at   }}</h6>
+                </div>
+            </div>
+        {% endfor %}
+
+    </div>
+</div>
+{% endblock %}
