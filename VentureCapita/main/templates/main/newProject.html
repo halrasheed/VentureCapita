@@ -30,10 +30,36 @@
         <option value="Technology">Technology</option>
         <option value="Utility">Utility</option>
         <option value="Other">Other</option>
-      </select>
+    </select>
+
+
+    <label class="form-label">Risk</label>
+    <select name="risk" class="form-select" aria-label="Default select example">
+          <option selected>Open this select menu</option>
+          <option value="High">High</option>
+          <option value="Medium">Medium</option>
+          <option value="Low">Low</option>
+          <option value="Unknown">Unknown</option>
+    </select>
+
+    <label class="form-label">Expected Return</label>
+    <select name="expected_Return" class="form-select" aria-label="Default select example">
+        <option selected>Open this select menu</option>
+        <option value="10%<##>30%">10%<##>30%</option>
+        <option value="30%<##>50%">30%<##>50%</option>
+        <option value="50%<##>70%">50%<##>70%</option>
+        <option value="70%<##">70%<##</option>
+        <option value="Other">Other</option>
+    </select>
 
     <label for="date">Established</label> 
     <input class= "m-2" name="established_at" type="date"/> 
+
+    <label class="form-label">Shares Count</label>
+    <input class="form-control" name="sharesCount" type="number"/>
+
+    <label class="form-label">One Share Value</label>
+    <input class="form-control" name="sharesValue" type="number"/>
 
       <br/>
       <input type="submit" class="btn btn-primary" value="Creat Project" />

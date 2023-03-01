@@ -7,14 +7,23 @@
 
 <div class="container">
     <section>
-    <h1>{{ projct.name }}</h1>
-    <h6>Established on: {{ projct.established_at}}</h6>
-    <p>{{ projct.description }}</p>
-    <h6>Under the department of: {{ projct.department}}</h6>
-    <div class="m-3 "><a href="{% url 'main:updateprojct' projct.id %}" class="btn btn-primary">update</a></div>
-
-</section>
+    <h1>{{ project.name }}</h1>
+    <h6>Sector: {{ project.department}}</h6>
+    <p>{{ project.description }}</p>
+    <img src="{{project.feature_image.url}}" alt="">
+    <h6>Established on: {{ project.established_at}}</h6>
+    <h6>Share Value: {{ project.sharesValue}}</h6>
+    <h6>Your Shares: {{ project.usrShares}}</h6>
+    </section>
     <hr/>
+    <label class="form-label">Enter Share Count</label>
+    <input type="number" name="wantedCount" class="form-control" />
+
+      <br/>
+      <input type="submit" class="btn btn-primary" value="Buy" />
+    {% if buy_msg %}
+    <h6 class="text-danger">{{buy_msg}}</h6>
+    {% endif %}
 
 </div>
 

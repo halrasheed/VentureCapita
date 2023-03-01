@@ -1,0 +1,27 @@
+{% block title %} Details for {{ projct.name }}  {% endblock %}
+
+
+{% block content %}
+
+<div class="container">
+    <section>
+    <h1>{{ user.first_name }}  {{user.last_name}}</h1>
+    <h3>Your Balance: {{user.balance}}</h3>
+    <h6>Shares:</h6>
+    <br/>
+    {% for share in shares %}
+    <br/>
+    <div class="p-2 border mt-2">
+
+        <h5>{{ share.project}}</h5>
+        <h6> Count:{{ share.shares }}</h6>
+        <h6> Value:{{ share.project.sharesValue }}</h6>
+
+    </div>
+    {% endfor %}
+    </section>
+    <hr/>
+
+</div>
+
+{% endblock %}

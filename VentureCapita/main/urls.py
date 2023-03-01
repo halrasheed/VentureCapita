@@ -5,13 +5,13 @@ app_name = "main"
 
 urlpatterns = [
     path("",                         views.indexfunction,        name="index"),
-    path("register",                 views.userRegisterFun,      name="register"),
-    path("login",                    views.userAuthFun,          name="login"),
-    path("logout/",                  views.userLogoutFun,        name="logout"),
-    path("add/",                     views.newProjectFun,         name="newProject"),
-    path("details/<clinic_id>/",     views.projectDetailsFun,     name="projectDetails"),
-    #path("update/<clinic_id>/",      views.updateClinicFun,      name="updateClinic"),
-    path("find/",                    views.findProjectFun,        name="findProject" ),
-    #path("addA/<clinic_id>/",        views.newAppointmentFun,    name="addAppointment"),
-    
+    path("register",                 views.userRegisterFunction,      name="register"),
+    path("login",                    views.userAuthFunction,          name="login"),
+    path("logout/",                  views.userLogoutFunction,        name="logout"),
+    path("add/",                     views.newProjectFunction,        name="newProject"),
+    path("details/<project_id>/",    views.projectDetailsFunction,    name="projectDetails"),
+    #path("update/<project_id>/",    views.updateProjectFunction,     name="updateProjct"),
+    path("find/",                    views.findProjectFunction,       name="findProject" ),
+    path("profile/",                 views.profileFunction,           name="profile" ),
+    path("buy/<project_id>/",        views.buyBeforFunction,          name="profile" ),
 ]##
