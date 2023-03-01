@@ -13,5 +13,5 @@ urlpatterns = [
     #path("update/<project_id>/",    views.updateProjectFunction,     name="updateProjct"),
     path("find/",                    views.findProjectFunction,       name="findProject" ),
     path("profile/",                 views.profileFunction,           name="profile" ),
-    path("buy/<project_id>/",        views.buyBeforFunction,          name="profile" ),
+    path("buy/<project_id>/",        views.buyBeforFunction,          name="buy" ),
 ]##

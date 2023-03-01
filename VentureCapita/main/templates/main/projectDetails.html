@@ -18,11 +18,17 @@
     
     </section>
     <hr/>
-    <label class="form-label">Enter Share Count</label>
-    <input type="number" name="wantedCount" class="form-control" />
-
+    
       <br/>
-      <input type="submit" class="btn btn-primary" value="Buy" />
+      <form class="d-flex" method=POST action="{% url 'main:buy' %}">
+        {% csrf_token %}
+        <label class="form-label">Enter Share Count</label>
+        <input type="number" min="0" name="wantedCount" class="form-control" />
+        <button class="btn btn-outline-primary" type="submit">Buy</button>
+
+
+
+      </form>
     {% if buy_msg %}
     <h6 class="text-danger">{{buy_msg}}</h6>
     {% endif %}

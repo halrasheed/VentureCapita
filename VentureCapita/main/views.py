@@ -79,8 +79,9 @@ def buyBeforFunction (request : HttpRequest, project_id):
     buy_msg=None
     project = Project.objects.get(id=project_id) 
     user : Users=request.user
-    shares = Shares.objects.get(id=project_id)
-    wantedCount= request.POST['wantedCount']
+    shares = Shares.objects.filter(project=project)
+    if request.method == "POST":
+        wantedCount= request.POST['wantedCount']
     sharesPraice = wantedCount*project.sharesValue
     if (user.balance >= sharesPraice and wantedCount <= project.sharesAvailable):
         user.balance = user.balance - sharesPraice
@@ -93,7 +94,7 @@ def buyBeforFunction (request : HttpRequest, project_id):
         buy_msg = "You Cannot Buy This Shares"
         return render(request, "main/findProject.html", {'buy_msg' : buy_msg})
 ##################################################################
-def profileFunction(request : HttpRequest, user_id):
+def profileFunction(request : HttpRequest):
     '''  Function for browsing user dashbord '''
     user : Users=request.user
     shares = Shares.objects.filter(user=user)

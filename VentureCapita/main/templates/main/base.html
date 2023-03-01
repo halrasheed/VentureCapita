@@ -732,7 +732,9 @@ a:hover .fa-youtube{
         {% if user.is_authenticated %}
         <a class="thierd" href="{% url 'main:logout' %}">Logout</a>
         {% endif %}
-        
+        {% if user.is_authenticated %}
+        <a class="fourth" href="{% url 'main:profile' %}">Profile</a>
+        {% endif %}
 
     </div>
    

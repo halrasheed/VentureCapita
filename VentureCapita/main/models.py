@@ -39,4 +39,12 @@ class Shares (models.Model):
     shares  = models.IntegerField ()
 
 
+class Sell (models.Model):
+
+    project = models.ForeignKey(Project, on_delete=models.CASCADE)
+    user    = models.ForeignKey(User, on_delete= models.CASCADE)
+    sharesNumber  = models.IntegerField ()
+    sharesPrice   = models.IntegerField ()
+
+
 
