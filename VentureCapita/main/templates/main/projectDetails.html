@@ -13,7 +13,9 @@
     <img src="{{project.feature_image.url}}" alt="">
     <h6>Established on: {{ project.established_at}}</h6>
     <h6>Share Value: {{ project.sharesValue}}</h6>
+    {% if user.is_authenticated %}
     <h6>Your Shares: {{ project.usrShares}}</h6>
+    
     </section>
     <hr/>
     <label class="form-label">Enter Share Count</label>
@@ -24,7 +26,7 @@
     {% if buy_msg %}
     <h6 class="text-danger">{{buy_msg}}</h6>
     {% endif %}
-
+    {% endif %}
 </div>
 
 {% endblock %}
